@@ -2,18 +2,39 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Элементы меню
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
     const navLinks = document.querySelector('.nav-links');
     const header = document.getElementById('header');
     const backToTop = document.querySelector('.back-to-top');
+    const headerContent = document.querySelector('.header-content');
     
     // Обработчик мобильного меню
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', function() {
-            navLinks.classList.toggle('show');
-            this.querySelector('i').classList.toggle('fa-bars');
-            this.querySelector('i').classList.toggle('fa-times');
+    if (mobileMenuBtn && headerContent) {
+        mobileMenuBtn.addEventListener('click', () => {
+            headerContent.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
         });
     }
+    
+    // Закрытие мобильного меню при клике на ссылку
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (headerContent.classList.contains('active')) {
+                headerContent.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+    });
+    
+    // Закрытие мобильного меню при клике вне меню
+    document.addEventListener('click', (e) => {
+        if (headerContent && headerContent.classList.contains('active')) {
+            if (!e.target.closest('.header-content') && !e.target.closest('.mobile-menu-btn')) {
+                headerContent.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        }
+    });
     
     // Плавная прокрутка для якорных ссылок
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -21,10 +42,9 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             // Закрываем мобильное меню при клике на ссылку
-            if (navLinks.classList.contains('show')) {
-                navLinks.classList.remove('show');
-                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
-                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+            if (mobileMenu && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
             }
             
             const targetId = this.getAttribute('href');
@@ -32,8 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80, // Учитываем высоту шапки
+                targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
             }
@@ -44,10 +63,10 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         if (window.scrollY > 100) {
             header.classList.add('scrolled');
-            backToTop.classList.add('show');
+            backToTop.classList.add('visible');
         } else {
             header.classList.remove('scrolled');
-            backToTop.classList.remove('show');
+            backToTop.classList.remove('visible');
         }
     });
     
@@ -187,37 +206,156 @@ document.addEventListener('DOMContentLoaded', function() {
     animateOnScroll();
     
     // Добавляем маску для телефонного номера
-    const phoneInput = document.getElementById('phone');
+    const phoneInputs = document.querySelectorAll('input[type="tel"]');
     
-    if (phoneInput) {
-        phoneInput.addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
+    phoneInputs.forEach(input => {
+        let masked = '+7 (___) ___-__-__';
+        let current = 0;
+        let template = masked.replace(/\D/g, '');
+        let def = masked.replace(/\D/g, '');
+
+        input.addEventListener('input', function(e) {
+            let val = this.value.replace(/\D/g, '');
+            let i = 0;
             
-            if (value.length > 0) {
-                if (value[0] === '7' || value[0] === '8') {
-                    value = value.substring(1);
-                }
-                
-                let formattedValue = '+7';
-                
-                if (value.length > 0) {
-                    formattedValue += ' (' + value.substring(0, 3);
-                }
-                
-                if (value.length > 3) {
-                    formattedValue += ') ' + value.substring(3, 6);
-                }
-                
-                if (value.length > 6) {
-                    formattedValue += '-' + value.substring(6, 8);
-                }
-                
-                if (value.length > 8) {
-                    formattedValue += '-' + value.substring(8, 10);
-                }
-                
-                e.target.value = formattedValue;
+            if (def.length >= val.length) {
+                val = def;
             }
+            
+            this.value = masked.replace(/./g, function(a) {
+                if (/[_\d]/.test(a) && i < val.length) {
+                    return val.charAt(i++);
+                } else if (i >= val.length) {
+                    return '';
+                } else {
+                    return a;
+                }
+            });
+        });
+
+        input.addEventListener('focus', function() {
+            if (this.value.length === 0) {
+                this.value = '+7 (';
+                current = 3;
+            }
+        });
+    });
+
+    // Статистика с анимацией
+    const stats = document.querySelectorAll('.stat-number');
+    const statsSection = document.querySelector('.stats');
+    
+    let animated = false;
+    
+    function animateStats() {
+        if (animated) return;
+        
+        stats.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-target'));
+            const duration = 2000; // 2 секунды
+            const step = target / (duration / 16); // 60fps
+            let current = 0;
+            
+            const counter = setInterval(() => {
+                current += step;
+                stat.textContent = Math.floor(current);
+                
+                if (current >= target) {
+                    stat.textContent = target;
+                    clearInterval(counter);
+                }
+            }, 16);
+        });
+        
+        animated = true;
+    }
+
+    // Анимация при скролле
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (entry.target === statsSection) {
+                    animateStats();
+                }
+                entry.target.classList.add('aos-animate');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('[data-aos]').forEach(element => {
+        observer.observe(element);
+    });
+
+    // Фильтрация продуктов
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Удаляем активный класс у всех кнопок
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Добавляем активный класс текущей кнопке
+            btn.classList.add('active');
+            
+            const category = btn.getAttribute('data-category');
+            
+            productCards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 10);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+
+    // Модальные окна
+    const modalTriggers = document.querySelectorAll('[data-modal]');
+    const modals = document.querySelectorAll('.modal');
+    const closeButtons = document.querySelectorAll('.close-modal');
+    
+    modalTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            const modalId = trigger.getAttribute('data-modal');
+            const modal = document.querySelector(modalId);
+            if (modal) {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+    
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = button.closest('.modal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        });
+    });
+    
+    window.addEventListener('click', (e) => {
+        if (e.target.classList.contains('modal')) {
+            e.target.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Видео в фоне
+    const video = document.getElementById('hero-video');
+    if (video) {
+        video.play().catch(function(error) {
+            console.log("Автовоспроизведение видео отключено");
         });
     }
 }); 
