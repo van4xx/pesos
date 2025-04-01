@@ -67,39 +67,22 @@
         </div>
     </header>
 
-    <section id="hero" class="hero">
-        <div class="hero-video-container">
-            <video autoplay muted loop id="hero-video">
-                <source src="images/sand-video.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <h1 class="animate__animated animate__fadeInDown">Высококачественный кварцевый песок</h1>
-                <p class="animate__animated animate__fadeInUp animate__delay-1s">Надежные поставки песка различных фракций для промышленности и строительства</p>
-                <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-2s">
-                    <a href="#contact" class="btn btn-primary">Получить коммерческое предложение</a>
-                    <a href="#products" class="btn btn-outline">Узнать больше</a>
-                </div>
-                <div class="hero-features">
-                    <div class="hero-feature animate__animated animate__fadeInUp animate__delay-3s">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Высшее качество</span>
-                    </div>
-                    <div class="hero-feature animate__animated animate__fadeInUp animate__delay-3s">
-                        <i class="fas fa-truck"></i>
-                        <span>Быстрая доставка</span>
-                    </div>
-                    <div class="hero-feature animate__animated animate__fadeInUp animate__delay-3s">
-                        <i class="fas fa-certificate"></i>
-                        <span>Все сертификаты</span>
-                    </div>
-                </div>
+    <section class="hero">
+        <div class="hero-content">
+            <h1 data-aos="fade-up">Кварцевый песок высокого качества</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Надежный поставщик кварцевого песка для промышленных предприятий. Стабильное качество, своевременные поставки.</p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
+                <a href="#contact" class="btn btn-primary">Заказать</a>
+                <a href="#about" class="btn btn-outline">Узнать больше</a>
             </div>
         </div>
-        <div class="hero-scroll-down">
-            <a href="#about">
-                <i class="fas fa-chevron-down"></i>
+        <div class="hero-scroll-down" data-aos="fade-up" data-aos-delay="300">
+            <a href="#stats">
+                <span>Прокрутите вниз</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
             </a>
         </div>
     </section>
@@ -298,7 +281,6 @@
                         </div>
                         <div class="product-actions">
                             <a href="#order" class="btn btn-primary">Заказать</a>
-                            <button class="btn btn-outline" data-modal="product-details">Подробнее</button>
                         </div>
                     </div>
                 </div>
@@ -335,7 +317,6 @@
                         </div>
                         <div class="product-actions">
                             <a href="#order" class="btn btn-primary">Заказать</a>
-                            <button class="btn btn-outline" data-modal="product-details">Подробнее</button>
                         </div>
                     </div>
                 </div>
@@ -390,39 +371,97 @@
                 <div class="timeline-item" data-aos="fade-right">
                     <div class="timeline-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 12L9 12M21 6L9 6M21 18L9 18M5 12L3 12M5 6L3 6M5 18L3 18"/>
+                            <path d="M3 11V15L12 20L21 15V11M3 7L12 12L21 7L12 2L3 7Z" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 12V20" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
                     <div class="timeline-content">
-                        <h3>Добыча</h3>
-                        <p>Добыча сырья на собственных карьерах с использованием современной техники</p>
+                        <span class="step-number">01</span>
+                        <h3>Добыча сырья</h3>
+                        <p>Добыча кварцевого песка на собственных карьерах с использованием современной техники и соблюдением экологических норм</p>
+                        <ul class="process-features">
+                            <li>Высокое качество сырья</li>
+                            <li>Экологический контроль</li>
+                            <li>Современное оборудование</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="timeline-item" data-aos="fade-left">
                     <div class="timeline-icon">
-                        <i class="fas fa-filter"></i>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 3L20 7.5V16.5L12 21L4 16.5V7.5L12 3Z" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 12L20 7.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 12V21" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 12L4 7.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
                     <div class="timeline-content">
-                        <h3>Очистка</h3>
-                        <p>Многоступенчатая система очистки от примесей и обогащения</p>
+                        <span class="step-number">02</span>
+                        <h3>Очистка и обогащение</h3>
+                        <p>Многоступенчатая система очистки от примесей и обогащения для достижения высокой чистоты материала</p>
+                        <ul class="process-features">
+                            <li>Удаление примесей</li>
+                            <li>Промывка и сушка</li>
+                            <li>Магнитная сепарация</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="timeline-item" data-aos="fade-right">
                     <div class="timeline-icon">
-                        <i class="fas fa-sort-amount-down"></i>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 8V4M4 4H8M4 4L9 9" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20 8V4M20 4H16M20 4L15 9" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 16V20M4 20H8M4 20L9 15" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20 16V20M20 20H16M20 20L15 15" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
                     <div class="timeline-content">
-                        <h3>Сортировка</h3>
-                        <p>Точная калибровка по фракциям с помощью современного оборудования</p>
+                        <span class="step-number">03</span>
+                        <h3>Калибровка и сортировка</h3>
+                        <p>Точная калибровка по фракциям с помощью современного оборудования для получения продукта требуемого размера</p>
+                        <ul class="process-features">
+                            <li>Точный размер фракций</li>
+                            <li>Автоматизированная сортировка</li>
+                            <li>Контроль гранулометрии</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="timeline-item" data-aos="fade-left">
                     <div class="timeline-icon">
-                        <i class="fas fa-vial"></i>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12L11 14L15 10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
                     <div class="timeline-content">
+                        <span class="step-number">04</span>
                         <h3>Контроль качества</h3>
-                        <p>Лабораторные испытания каждой партии продукции</p>
+                        <p>Тщательный лабораторный контроль каждой партии продукции на соответствие стандартам качества</p>
+                        <ul class="process-features">
+                            <li>Лабораторные испытания</li>
+                            <li>Сертификация продукции</li>
+                            <li>Контроль характеристик</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8C21 7.46957 20.7893 6.96086 20.4142 6.58579C20.0391 6.21071 19.5304 6 19 6H5C4.46957 6 3.96086 6.21071 3.58579 6.58579C3.21071 6.96086 3 7.46957 3 8V16C3 16.5304 3.21071 17.0391 3.58579 17.4142C3.96086 17.7893 4.46957 18 5 18H19C19.5304 18 20.0391 17.7893 20.4142 17.4142C20.7893 17.0391 21 16.5304 21 16Z" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 10H21" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7 14H7.01" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M11 14H13" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="step-number">05</span>
+                        <h3>Упаковка и отгрузка</h3>
+                        <p>Бережная упаковка и подготовка к отправке с учетом требований клиента и способа доставки</p>
+                        <ul class="process-features">
+                            <li>Различные виды упаковки</li>
+                            <li>Маркировка продукции</li>
+                            <li>Подготовка документации</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -587,59 +626,109 @@
 
     <section id="testimonials" class="testimonials">
         <div class="container">
-            <h2 class="section-title">Отзывы наших клиентов</h2>
-            <div class="testimonials-slider">
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <div class="testimonial-text">
-                            <p>"Сотрудничаем с компанией более 3 лет. Всегда стабильное качество и точное соблюдение сроков поставок. Рекомендуем как надежного поставщика."</p>
+            <h2 class="section-title" data-aos="fade-up">Что говорят наши клиенты</h2>
+            <div class="testimonials-wrapper">
+                <div class="testimonials-slider">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <div class="testimonial-header">
+                                <div class="testimonial-author">
+                                    <svg class="testimonial-avatar" width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C14.7614 2 17 4.23858 17 7C17 9.76142 14.7614 12 12 12C9.23858 12 7 9.76142 7 7C7 4.23858 9.23858 2 12 2Z" fill="var(--primary-color)" fill-opacity="0.2"/><path d="M20.5858 21.4142C18.7636 19.592 15.6451 18.611 12.0001 18.611C8.35506 18.611 5.23657 19.592 3.41436 21.4142C3.11737 21.7112 3.17558 22.1857 3.51846 22.4206C3.86133 22.6555 4.37262 22.5959 4.64998 22.2617C6.77307 19.7983 9.92683 19.111 12.0001 19.111C14.0733 19.111 17.2271 19.7983 19.3501 22.2617C19.6275 22.5959 20.1388 22.6555 20.4817 22.4206C20.8245 22.1857 20.8827 21.7112 20.5858 21.4142Z" fill="var(--secondary-color)"/><path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="var(--primary-color)" stroke-width="1.5"/></svg>
+                                    <div class="author-info">
+                                        <h4>Иван Петров</h4>
+                                        <p>ООО "СтройИнвест"</p>
+                                        <div class="rating">
+                                            <svg class="star" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <svg class="star" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <svg class="star" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <svg class="star" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <svg class="star" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <svg class="star" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <svg class="star" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="testimonial-date">Май 2024</div>
+                            </div>
+                            <div class="testimonial-text">
+                                <svg class="quote-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 11H6C4.89543 11 4 10.1046 4 9V6C4 4.89543 4.89543 4 6 4H9C10.1046 4 11 4.89543 11 6V14C11 17.3137 8.31371 20 5 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 11H18C16.8954 11 16 10.1046 16 9V6C16 4.89543 16.8954 4 18 4H21C22.1046 4 23 4.89543 23 6V14C23 17.3137 20.3137 20 17 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <p>Сотрудничаем с компанией более 3 лет. Всегда стабильное качество и точное соблюдение сроков поставок. Рекомендуем как надежного поставщика.</p>
+                            </div>
                         </div>
-                        <div class="testimonial-author">
-                            <svg class="testimonial-avatar" width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C14.7614 2 17 4.23858 17 7C17 9.76142 14.7614 12 12 12C9.23858 12 7 9.76142 7 7C7 4.23858 9.23858 2 12 2Z" fill="var(--primary-color)" fill-opacity="0.2"/><path d="M20.5858 21.4142C18.7636 19.592 15.6451 18.611 12.0001 18.611C8.35506 18.611 5.23657 19.592 3.41436 21.4142C3.11737 21.7112 3.17558 22.1857 3.51846 22.4206C3.86133 22.6555 4.37262 22.5959 4.64998 22.2617C6.77307 19.7983 9.92683 19.111 12.0001 19.111C14.0733 19.111 17.2271 19.7983 19.3501 22.2617C19.6275 22.5959 20.1388 22.6555 20.4817 22.4206C20.8245 22.1857 20.8827 21.7112 20.5858 21.4142Z" fill="var(--secondary-color)"/><path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="var(--primary-color)" stroke-width="1.5"/></svg>
-                            <div class="author-info">
-                                <h4>Иван Петров</h4>
-                                <p>ООО "СтройИнвест"</p>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <div class="testimonial-header">
+                                <div class="testimonial-author">
+                                    <svg class="testimonial-avatar" width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C14.7614 2 17 4.23858 17 7C17 9.76142 14.7614 12 12 12C9.23858 12 7 9.76142 7 7C7 4.23858 9.23858 2 12 2Z" fill="var(--primary-color)" fill-opacity="0.2"/><path d="M20.5858 21.4142C18.7636 19.592 15.6451 18.611 12.0001 18.611C8.35506 18.611 5.23657 19.592 3.41436 21.4142C3.11737 21.7112 3.17558 22.1857 3.51846 22.4206C3.86133 22.6555 4.37262 22.5959 4.64998 22.2617C6.77307 19.7983 9.92683 19.111 12.0001 19.111C14.0733 19.111 17.2271 19.7983 19.3501 22.2617C19.6275 22.5959 20.1388 22.6555 20.4817 22.4206C20.8245 22.1857 20.8827 21.7112 20.5858 21.4142Z" fill="var(--secondary-color)"/><path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="var(--primary-color)" stroke-width="1.5"/></svg>
+                                    <div class="author-info">
+                                        <h4>Мария Сидорова</h4>
+                                        <p>ЗАО "СтеклоМир"</p>
+                                        <div class="rating">
+                                            <svg class="star" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <svg class="star" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <svg class="star" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <svg class="star" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <svg class="star" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="testimonial-date">Апрель 2024</div>
+                            </div>
+                            <div class="testimonial-text">
+                                <svg class="quote-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 11H6C4.89543 11 4 10.1046 4 9V6C4 4.89543 4.89543 4 6 4H9C10.1046 4 11 4.89543 11 6V14C11 17.3137 8.31371 20 5 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 11H18C16.8954 11 16 10.1046 16 9V6C16 4.89543 16.8954 4 18 4H21C22.1046 4 23 4.89543 23 6V14C23 17.3137 20.3137 20 17 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <p>Благодаря высокому качеству кварцевого песка смогли повысить качество нашей продукции. Отдельное спасибо за индивидуальный подход!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <div class="testimonial-header">
+                                <div class="testimonial-author">
+                                    <svg class="testimonial-avatar" width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C14.7614 2 17 4.23858 17 7C17 9.76142 14.7614 12 12 12C9.23858 12 7 9.76142 7 7C7 4.23858 9.23858 2 12 2Z" fill="var(--primary-color)" fill-opacity="0.2"/><path d="M20.5858 21.4142C18.7636 19.592 15.6451 18.611 12.0001 18.611C8.35506 18.611 5.23657 19.592 3.41436 21.4142C3.11737 21.7112 3.17558 22.1857 3.51846 22.4206C3.86133 22.6555 4.37262 22.5959 4.64998 22.2617C6.77307 19.7983 9.92683 19.111 12.0001 19.111C14.0733 19.111 17.2271 19.7983 19.3501 22.2617C19.6275 22.5959 20.1388 22.6555 20.4817 22.4206C20.8245 22.1857 20.8827 21.7112 20.5858 21.4142Z" fill="var(--secondary-color)"/><path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="var(--primary-color)" stroke-width="1.5"/></svg>
+                                    <div class="author-info">
+                                        <h4>Алексей Николаев</h4>
+                                        <p>ПАО "АкваТех"</p>
+                                        <div class="rating">
+                                            <svg class="star" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <svg class="star" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <svg class="star" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <svg class="star" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <svg class="star" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <svg class="star" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            <svg class="star" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="testimonial-date">Март 2024</div>
+                            </div>
+                            <div class="testimonial-text">
+                                <svg class="quote-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 11H6C4.89543 11 4 10.1046 4 9V6C4 4.89543 4.89543 4 6 4H9C10.1046 4 11 4.89543 11 6V14C11 17.3137 8.31371 20 5 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 11H18C16.8954 11 16 10.1046 16 9V6C16 4.89543 16.8954 4 18 4H21C22.1046 4 23 4.89543 23 6V14C23 17.3137 20.3137 20 17 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <p>Заказываем песок для фильтрационных систем. Качество материала позволяет достичь отличных результатов очистки. Будем продолжать сотрудничество.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <div class="testimonial-text">
-                            <p>"Благодаря высокому качеству кварцевого песка смогли повысить качество нашей продукции. Отдельное спасибо за индивидуальный подход!"</p>
-                        </div>
-                        <div class="testimonial-author">
-                             <svg class="testimonial-avatar" width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C14.7614 2 17 4.23858 17 7C17 9.76142 14.7614 12 12 12C9.23858 12 7 9.76142 7 7C7 4.23858 9.23858 2 12 2Z" fill="var(--primary-color)" fill-opacity="0.2"/><path d="M20.5858 21.4142C18.7636 19.592 15.6451 18.611 12.0001 18.611C8.35506 18.611 5.23657 19.592 3.41436 21.4142C3.11737 21.7112 3.17558 22.1857 3.51846 22.4206C3.86133 22.6555 4.37262 22.5959 4.64998 22.2617C6.77307 19.7983 9.92683 19.111 12.0001 19.111C14.0733 19.111 17.2271 19.7983 19.3501 22.2617C19.6275 22.5959 20.1388 22.6555 20.4817 22.4206C20.8245 22.1857 20.8827 21.7112 20.5858 21.4142Z" fill="var(--secondary-color)"/><path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="var(--primary-color)" stroke-width="1.5"/></svg>
-                            <div class="author-info">
-                                <h4>Мария Сидорова</h4>
-                                <p>ЗАО "СтеклоМир"</p>
-                            </div>
-                        </div>
+                
+                <div class="slider-controls">
+                    <button class="prev-btn" aria-label="Предыдущий отзыв">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <div class="slider-dots">
+                        <span class="dot active" aria-label="Отзыв 1"></span>
+                        <span class="dot" aria-label="Отзыв 2"></span>
+                        <span class="dot" aria-label="Отзыв 3"></span>
                     </div>
+                    <button class="next-btn" aria-label="Следующий отзыв">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
                 </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <div class="testimonial-text">
-                            <p>"Заказываем песок для фильтрационных систем. Качество материала позволяет достичь отличных результатов очистки. Будем продолжать сотрудничество."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <svg class="testimonial-avatar" width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C14.7614 2 17 4.23858 17 7C17 9.76142 14.7614 12 12 12C9.23858 12 7 9.76142 7 7C7 4.23858 9.23858 2 12 2Z" fill="var(--primary-color)" fill-opacity="0.2"/><path d="M20.5858 21.4142C18.7636 19.592 15.6451 18.611 12.0001 18.611C8.35506 18.611 5.23657 19.592 3.41436 21.4142C3.11737 21.7112 3.17558 22.1857 3.51846 22.4206C3.86133 22.6555 4.37262 22.5959 4.64998 22.2617C6.77307 19.7983 9.92683 19.111 12.0001 19.111C14.0733 19.111 17.2271 19.7983 19.3501 22.2617C19.6275 22.5959 20.1388 22.6555 20.4817 22.4206C20.8245 22.1857 20.8827 21.7112 20.5858 21.4142Z" fill="var(--secondary-color)"/><path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="var(--primary-color)" stroke-width="1.5"/></svg>
-                            <div class="author-info">
-                                <h4>Алексей Николаев</h4>
-                                <p>ПАО "АкваТех"</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="slider-controls">
-                <button class="prev-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-                <div class="slider-dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-                <button class="next-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
             </div>
         </div>
     </section>

@@ -248,13 +248,24 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentSlide = 0;
     if (testimonials.length > 0 && dots.length > 0) {
         function showSlide(index) {
+            // Скрываем все слайды и деактивируем точки
             testimonials.forEach((slide, i) => {
-                slide.style.display = (i === index) ? 'block' : 'none';
-                 // Можно добавить классы для анимации
+                slide.style.display = 'none';
+                slide.style.opacity = '0';
+                slide.style.transform = 'translateX(50px)';
+                dots[i].classList.remove('active');
             });
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
+            
+            // Показываем активный слайд и активируем соответствующую точку
+            testimonials[index].style.display = 'block';
+            dots[index].classList.add('active');
+            
+            // Добавляем небольшую задержку перед анимацией для плавности
+            setTimeout(() => {
+                testimonials[index].style.opacity = '1';
+                testimonials[index].style.transform = 'translateX(0)';
+            }, 50);
+            
             currentSlide = index;
         }
 
@@ -263,18 +274,44 @@ document.addEventListener('DOMContentLoaded', function() {
                 showSlide((currentSlide + 1) % testimonials.length);
             });
         }
+        
         if (prevBtn) {
             prevBtn.addEventListener('click', () => {
                 showSlide((currentSlide - 1 + testimonials.length) % testimonials.length);
             });
         }
+        
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => showSlide(index));
         });
 
+        // Устанавливаем индексы для звездочек для анимации с задержкой
+        const stars = document.querySelectorAll('.star');
+        stars.forEach((star, index) => {
+            star.style.setProperty('--i', index % 5);
+        });
+
         showSlide(0); // Показать первый слайд
+        
         // Автопрокрутка (опционально)
-        // setInterval(() => nextBtn.click(), 5000);
+        const autoplayInterval = 7000; // 7 секунд между слайдами
+        let slideInterval = setInterval(() => {
+            showSlide((currentSlide + 1) % testimonials.length);
+        }, autoplayInterval);
+        
+        // Останавливаем автопрокрутку при наведении на слайдер
+        const sliderContainer = document.querySelector('.testimonials-slider');
+        if (sliderContainer) {
+            sliderContainer.addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+            
+            sliderContainer.addEventListener('mouseleave', () => {
+                slideInterval = setInterval(() => {
+                    showSlide((currentSlide + 1) % testimonials.length);
+                }, autoplayInterval);
+            });
+        }
     }
 
     // --- Модальные окна ---
